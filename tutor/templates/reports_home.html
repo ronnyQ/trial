@@ -1,0 +1,35 @@
+{% extends "tutor_base.html" %}
+
+{% block content %}
+    <h2>Reports</h2>
+    <p>Select a sesison run from the list below to view a report.</p>
+
+    <script type="text/html" id="session-run-option-template">
+        <option value="[#sessionRunId#]">[#sessionRunDatetime#]</option>
+    </script>
+
+    <form class="form-horizontal" method="GET" action="/tutor/reports/session_run_report/" role="form">
+        <div class="form-group">
+            <label for="session" class="col-sm-2 control-label">Session</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="session-select">
+                    <option value='-1'>--- Select a session ---</option>
+                    {% for session in sessions %}
+                        <option value="{{ session.pk }}">{{ session.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="session" class="col-sm-2 control-label">Session Run</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="session-run-select" name="session_run">
+                    <option>--- You must select a session first ---</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Generate Report"> 
+    </form>
+{% endblock %}

@@ -1,0 +1,39 @@
+/* Global Styles */
+#content-container {
+    margin-top: 70px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+input.input-narrow {
+    width: 50px !important;
+}
+
+/* Global UI Stuff */
+div.spinner-large {
+    background-image: url(/static/img/spinner-large.gif);
+    width: 66px;
+    height: 66px;
+}
+
+.center-block {
+    margin: 0 auto;
+}
+
+/* Tutor - Session Running */
+#question-running {
+    display: none;
+}
+
+#question-progress-bars {
+    display: none;
+}
+
+#gathering-responses {
+    display: none;
+}
+
+/* Student - Session Running */
+#question-container {
+    display: none;
+}

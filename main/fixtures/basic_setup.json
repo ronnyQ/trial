@@ -1,0 +1,890 @@
+[
+{
+    "fields": {
+        "email": "cameron@camerongray.me",
+        "is_superuser": true,
+        "is_staff": true,
+        "groups": [],
+        "username": "camerong",
+        "last_login": "2014-11-06T13:36:02.340Z",
+        "is_active": true,
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$MsrtVFQ5gr6c$PPSEHbgFQjh4kx8O4FaOyqvfXxEjOeytctAXN2cbsmk=",
+        "last_name": "",
+        "date_joined": "2014-11-03T14:01:03.888Z",
+        "first_name": ""
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "email": "",
+        "is_superuser": false,
+        "is_staff": false,
+        "groups": [],
+        "username": "tutor1",
+        "last_login": "2014-11-03T14:53:17.881Z",
+        "is_active": true,
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$x0voDPHrHlKj$53k08R9uulC/q9KBrdQCEGM8ae12SrI67DYTeU9oyZI=",
+        "last_name": "",
+        "date_joined": "2014-11-03T14:45:47Z",
+        "first_name": ""
+    },
+    "model": "auth.user",
+    "pk": 2
+},
+{
+    "fields": {
+        "email": "",
+        "is_superuser": false,
+        "is_staff": false,
+        "groups": [],
+        "username": "tutor2",
+        "last_login": "2014-11-06T14:05:17.669Z",
+        "is_active": true,
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$lc8pK7vgm8t6$pboC4yHupbhn4+9oqlYC3Pt3vqAB8530CM1kYxeHU7g=",
+        "last_name": "",
+        "date_joined": "2014-11-06T13:36:26.064Z",
+        "first_name": ""
+    },
+    "model": "auth.user",
+    "pk": 3
+},
+{
+    "fields": {
+        "email": "",
+        "is_superuser": false,
+        "is_staff": false,
+        "groups": [],
+        "username": "tutor3",
+        "last_login": "2014-11-06T14:12:35.992Z",
+        "is_active": true,
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$d0uIPQEGT7BD$jaBcnTRCoEh8bkiWquHx601vFcBUQEj0iYaN+kNzLYY=",
+        "last_name": "",
+        "date_joined": "2014-11-06T13:37:21.290Z",
+        "first_name": ""
+    },
+    "model": "auth.user",
+    "pk": 4
+},
+{
+    "fields": {
+        "title": "Maths",
+        "description": "This is a course on mathematics"
+    },
+    "pk": 1,
+    "model": "main.course"
+},
+{
+    "fields": {
+        "title": "Computing",
+        "description": "This is a course on Computing"
+    },
+    "pk": 2,
+    "model": "main.course"
+},
+{
+    "fields": {
+        "user": 2,
+        "course": 1
+    },
+    "pk": 1,
+    "model": "main.tutor_assignment"
+},
+{
+    "fields": {
+        "user": 3,
+        "course": 2
+    },
+    "pk": 2,
+    "model": "main.tutor_assignment"
+},
+{
+    "fields": {
+        "user": 4,
+        "course": 1
+    },
+    "pk": 3,
+    "model": "main.tutor_assignment"
+},
+{
+    "fields": {
+        "user": 4,
+        "course": 2
+    },
+    "pk": 4,
+    "model": "main.tutor_assignment"
+},
+{
+    "fields": {
+        "running": true,
+        "course": 1,
+        "url_code": "gsbs5",
+        "title": "Addition"
+    },
+    "pk": 1,
+    "model": "main.session"
+},
+{
+    "fields": {
+        "running": false,
+        "course": 1,
+        "url_code": "",
+        "title": "Multiplication"
+    },
+    "pk": 2,
+    "model": "main.session"
+},
+{
+    "fields": {
+        "running": true,
+        "course": 2,
+        "url_code": "dcis8",
+        "title": "Hardware"
+    },
+    "pk": 3,
+    "model": "main.session"
+},
+{
+    "fields": {
+        "running": false,
+        "course": 2,
+        "url_code": "",
+        "title": "Software"
+    },
+    "pk": 4,
+    "model": "main.session"
+},
+{
+    "fields": {
+        "session": 1,
+        "question_body": "What is 1+1?"
+    },
+    "pk": 1,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "session": 1,
+        "question_body": "What is 3+5?"
+    },
+    "pk": 2,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "session": 1,
+        "question_body": "What is 5+0?"
+    },
+    "pk": 3,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "session": 3,
+        "question_body": "Which of these is short term storage?"
+    },
+    "pk": 4,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "session": 3,
+        "question_body": "How many threads does an i7 4790k have?"
+    },
+    "pk": 5,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "session": 4,
+        "question_body": "Which of these is an Operating System?"
+    },
+    "pk": 6,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "session": 4,
+        "question_body": "Which of these would you use to create a spreadsheet?"
+    },
+    "pk": 7,
+    "model": "main.question"
+},
+{
+    "fields": {
+        "body": "5",
+        "correct": true,
+        "question": 3
+    },
+    "pk": 9,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "0",
+        "correct": false,
+        "question": 3
+    },
+    "pk": 10,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "4",
+        "correct": false,
+        "question": 3
+    },
+    "pk": 11,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "6",
+        "correct": false,
+        "question": 3
+    },
+    "pk": 12,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "8",
+        "correct": true,
+        "question": 2
+    },
+    "pk": 13,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "9",
+        "correct": false,
+        "question": 2
+    },
+    "pk": 14,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "4",
+        "correct": false,
+        "question": 2
+    },
+    "pk": 15,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "2",
+        "correct": false,
+        "question": 2
+    },
+    "pk": 16,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "1",
+        "correct": false,
+        "question": 1
+    },
+    "pk": 17,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "2",
+        "correct": true,
+        "question": 1
+    },
+    "pk": 18,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "3",
+        "correct": false,
+        "question": 1
+    },
+    "pk": 19,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "4",
+        "correct": false,
+        "question": 1
+    },
+    "pk": 20,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "RAM",
+        "correct": true,
+        "question": 4
+    },
+    "pk": 21,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Hard Drive",
+        "correct": false,
+        "question": 4
+    },
+    "pk": 22,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "SSD",
+        "correct": false,
+        "question": 4
+    },
+    "pk": 23,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "CPU",
+        "correct": false,
+        "question": 4
+    },
+    "pk": 24,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "2",
+        "correct": false,
+        "question": 5
+    },
+    "pk": 25,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "4",
+        "correct": false,
+        "question": 5
+    },
+    "pk": 26,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "8",
+        "correct": true,
+        "question": 5
+    },
+    "pk": 27,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "16",
+        "correct": false,
+        "question": 5
+    },
+    "pk": 28,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Excel",
+        "correct": true,
+        "question": 7
+    },
+    "pk": 33,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Word",
+        "correct": false,
+        "question": 7
+    },
+    "pk": 34,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "PowerPoint",
+        "correct": false,
+        "question": 7
+    },
+    "pk": 35,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Access",
+        "correct": false,
+        "question": 7
+    },
+    "pk": 36,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Microsoft Windows",
+        "correct": true,
+        "question": 6
+    },
+    "pk": 37,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Microsoft Word",
+        "correct": false,
+        "question": 6
+    },
+    "pk": 38,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Microsoft Access",
+        "correct": false,
+        "question": 6
+    },
+    "pk": 39,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "body": "Microsoft Excel",
+        "correct": false,
+        "question": 6
+    },
+    "pk": 40,
+    "model": "main.question_option"
+},
+{
+    "fields": {
+        "run_time": 5,
+        "start_time": "2014-11-05T14:23:43.248Z",
+        "session": 1,
+        "question": 2
+    },
+    "pk": 43,
+    "model": "main.current_question"
+},
+{
+    "fields": {
+        "run_time": 30,
+        "start_time": "2014-11-06T14:14:52.080Z",
+        "session": 3,
+        "question": 4
+    },
+    "pk": 44,
+    "model": "main.current_question"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T16:58:50.886Z",
+        "session": 1
+    },
+    "pk": 1,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T17:34:00.761Z",
+        "session": 1
+    },
+    "pk": 2,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T17:35:50.673Z",
+        "session": 1
+    },
+    "pk": 3,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T17:38:39.986Z",
+        "session": 1
+    },
+    "pk": 4,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T18:24:57.354Z",
+        "session": 1
+    },
+    "pk": 5,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T18:24:58.370Z",
+        "session": 1
+    },
+    "pk": 6,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-03T18:24:58.964Z",
+        "session": 1
+    },
+    "pk": 7,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:12:25.510Z",
+        "session": 1
+    },
+    "pk": 8,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:16:17.285Z",
+        "session": 1
+    },
+    "pk": 9,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:19:14.626Z",
+        "session": 1
+    },
+    "pk": 10,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:19:20.406Z",
+        "session": 1
+    },
+    "pk": 11,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:19:26.702Z",
+        "session": 1
+    },
+    "pk": 12,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:21:58.856Z",
+        "session": 1
+    },
+    "pk": 13,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:22:49.033Z",
+        "session": 1
+    },
+    "pk": 14,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-05T14:23:07.374Z",
+        "session": 1
+    },
+    "pk": 15,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "start_time": "2014-11-06T14:12:46.982Z",
+        "session": 3
+    },
+    "pk": 16,
+    "model": "main.session_run"
+},
+{
+    "fields": {
+        "session_run": 1,
+        "option": 13
+    },
+    "pk": 2,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 2,
+        "option": 10
+    },
+    "pk": 4,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 4,
+        "option": 15
+    },
+    "pk": 7,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 4,
+        "option": 20
+    },
+    "pk": 8,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 14
+    },
+    "pk": 17,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 13
+    },
+    "pk": 18,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 14
+    },
+    "pk": 19,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 13
+    },
+    "pk": 20,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 13
+    },
+    "pk": 21,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 13
+    },
+    "pk": 22,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 16
+    },
+    "pk": 23,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 13
+    },
+    "pk": 24,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 12
+    },
+    "pk": 25,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 9
+    },
+    "pk": 26,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 9
+    },
+    "pk": 27,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 9
+    },
+    "pk": 28,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 10
+    },
+    "pk": 29,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 10
+    },
+    "pk": 30,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 12
+    },
+    "pk": 31,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 7,
+        "option": 11
+    },
+    "pk": 32,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 15,
+        "option": 18
+    },
+    "pk": 33,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 15,
+        "option": 15
+    },
+    "pk": 34,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 35,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 36,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 24
+    },
+    "pk": 37,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 22
+    },
+    "pk": 38,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 39,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 40,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 41,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 22
+    },
+    "pk": 42,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 23
+    },
+    "pk": 43,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 23
+    },
+    "pk": 44,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 45,
+    "model": "main.student_response"
+},
+{
+    "fields": {
+        "session_run": 16,
+        "option": 21
+    },
+    "pk": 46,
+    "model": "main.student_response"
+}
+]

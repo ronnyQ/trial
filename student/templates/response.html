@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand">UDSM-ARS</span>
+            </div>
+        </div>
+    </nav>
+
+    <script type="text/html" id="template-question-option">
+        <button class="btn btn-primary btn-block btn-lg question-option-button" data-option-id="[# option_id #]"><h3>[# option_body #]</h3></button>
+    </script>
+    <script type="text/javascript">var sessionCode = '{{ session.url_code }}';</script>
+
+    <div id="content-container"> 
+        <div style="text-align: center;"><h1>{{ session.course.title }} - {{ session.title }}</h1></div>
+        <div id="wait-container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Waiting on a question...</h4></div>
+                <div class="panel-body">
+                    <div class="spinner-large center-block"></div>
+                </div>
+            </div>
+        </div>
+        <div id="question-container">
+            <div id="response-progress-bars">
+                <div id="time-remaining-progress" class="progress">
+                    <span class="progress-value"><span id="seconds-remaining"></span> seconds remaining</span>
+                    <div class="progress-bar" role="progressbar"></div>
+                </div>
+            </div>      
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4 id="question-title"></h4></div>
+                <div class="panel-body" id="question-option-container"></div>
+            </div>
+        </div>
+        <div id="response-transmitted-container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Response Transmitted</h4></div>
+                <div class="panel-body">
+                    <p>Your response has been transmitted!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block additional_js_includes %}
+    <script type="text/javascript" src="{% static 'js/student.js' %}"></script>
+{% endblock %}

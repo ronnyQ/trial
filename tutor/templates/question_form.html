@@ -1,0 +1,55 @@
+{% extends "tutor_base.html" %}
+
+{% block content %}
+    {% if type == 'edit' %}
+        <h2>Edit Question</h2>
+    {% elif type == 'new' %}
+        <h2>Add Question</h2>
+    {% else %}
+        <h2>You forgot to set a "type" in the view ya dafty</h2>
+    {% endif %}
+
+    <script id="option-row-template" type="text/html">
+        <tr>
+            <td><input type="text" class="form-control" name="option-body[#option_id#]"></td>
+            <td><input type="checkbox" name="option-correct[#option_id#]"></td>
+            <td><button type="button" class="remove-option btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button></td>
+        </tr>
+    </script>
+
+    <form class="form" role="form" method="POST">{% csrf_token %}
+        <div class="form-group">
+            <label for="question">Question Body:</label>
+            <input type="text" class="form-control" name="question" id="question" value="{{ question.question_body }}" />
+        </div>
+
+        <table class="table table-striped" id="option-table">
+            <thead>
+                <tr>
+                    <th>Option Body</th>
+                    <th style="width: 80px">Correct?</th>
+                    <th style="width: 50px"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for option in question_options %}
+                    <tr>
+                        <td><input type="text" class="form-control" name="option-body[{{ forloop.counter0 }}]" value="{{ option.body }}"></td>
+                        <td><input type="checkbox" name="option-correct[{{ forloop.counter0 }}]" {% if option.correct %}checked{% endif %}></td>
+                        <td><button type="button" class="remove-option btn btn-danger btn-sm {{ forloop.counter0 }}"><span class="glyphicon glyphicon-remove"></span></button></td>
+                    </tr>
+                {% endfor %}
+                <input type="hidden" name="max-options" id="max-options" value="{{ question_options|length }}">
+
+                <tr><td><button type="button" class="btn btn-primary" id="add-question-option"><span class="glyphicon glyphicon-plus"></span> Add Option</button></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        {% if type == 'edit' %}
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-disk"></span> Save Question</button>
+        {% elif type == 'new' %}
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Question</button>
+        {% endif %}
+    </form>
+{% endblock %}

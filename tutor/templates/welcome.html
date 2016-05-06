@@ -1,0 +1,22 @@
+{% extends "tutor_base.html" %}
+
+{% block content %}
+    
+  <div class="jumbotron center" style="text-align: center">
+  <h1> UDSM-ARS</h1> 
+  <p><span class="glyphicon glyphicon-stats"></span></p>      
+ <div class="logo center-block"></div>
+</div>
+    {% if request.session.course_id %}
+<div class="alert alert-info">
+            <strong>Click 'Sessions'</strong>
+             on top bar to start your session.
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            <strong>Notice:</strong>
+            To continue you must select a course from the menu in the top right of the screen.
+        </div>
+    {% endif %}
+    
+{% endblock %}

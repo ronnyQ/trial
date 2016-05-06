@@ -1,0 +1,15 @@
+{% extends "tutor_base.html" %}
+
+{% block content %}
+    <h2>Add New Session</h2>
+
+    <p>Enter a title for the session you wish to create, you will then be taken to a page allowing you to add questions.etc</p>
+
+    <form method="POST" role="form">{% csrf_token %}
+        <div class="form-group">
+            <label for="session-title">Session Title</label>
+            <input type="text" class="form-control" id="session-title" name="session-title">
+        </div>
+        <input type="submit" class="btn btn-success" value="Create Session and Continue">
+    </form>
+{% endblock %}

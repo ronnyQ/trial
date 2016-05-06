@@ -1,0 +1,6 @@
+/* Extensions to Bootstrap Functionality */
+.progress-value {
+    position:absolute;
+    right:0;
+    left:0;
+}

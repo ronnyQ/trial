@@ -1,0 +1,93 @@
+{% extends "tutor_base.html" %}
+{% load staticfiles %}
+
+{% block additional_stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jchart.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Session Running</h2>
+
+    <div class="alert alert-info"><strong>The response URL for this session is: </strong><a href="{{ response_url }}">{{ response_url }}</a></div>
+
+    <table id="running-session-statistics" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Users ready to receive questions</th>
+                <th>Number of responses received</th>
+                <th>Percentage received</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="num-responding-students">Loading...</td>
+                <td id="num-responses-received">N/A</td>
+                <td id="percentage-received">N/A</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="run-question" class="panel panel-default">
+        <div class="panel-heading">Run a question:</div>
+        <div class="panel-body">
+            <form class="form-inline" role="form">
+                Run question 
+                <div class="form-group">
+                    <select id="question" class="form-control">
+                        {% for question in questions %}
+                            <option value="{{ question.pk }}">{{ question.question_body }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                for
+                <div class="form-group">
+                    <input type="number" min="0" value="30" id="question-time" class="form-control input-narrow">
+                </div>
+                seconds
+                <input type="hidden" id="session-id" value="{{ session.id }}">
+                <input type="hidden" id="session-run-id" value="{{ session_run.id }}">
+                <button type="button" class="btn btn-primary" id="start-question"><span class="glyphicon glyphicon-play"></span> Start Question</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="question-running">
+        <div class="panel panel-default">
+            <div class="panel-heading">Question Running</div>
+            <div class="panel-body">
+                <div id="question-countdown-container">
+                    <h3 id="question-start-countdown" style="text-align: center;"><span id="seconds-until-start"></span> seconds remaining until question starts</h3>
+                    <div id="question-progress-bars">
+                        <h1 style="text-align: center;"><span id="seconds-remaining"></span> seconds remaining</h1>
+                        <div id="time-remaining-progress" class="progress">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div>
+                    </div>         
+                </div>
+
+                <div id="gathering-responses">
+                    <h1 style="text-align: center;">Gathering Remaining Responses...</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="question-results">
+        <div class="panel panel-default">
+            <div class="panel-heading">Question Results</div>
+            <div class="panel-body">
+                <div id="result-chart"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block additional_js_includes %}
+    {{ block.super }}
+    <script src="{% static 'js/jchart.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            statistics.startPollingForRespondingStudents();
+        })
+    </script>
+{% endblock %}

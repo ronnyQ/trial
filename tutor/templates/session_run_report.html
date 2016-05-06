@@ -1,0 +1,60 @@
+{% extends "tutor_base.html" %}
+
+{% block content %}
+    <h2>Session Run Report</h2>
+    <p><strong>Session:</strong> {{ session_run.session.title }}</p>
+    <p><strong>Run date/time:</strong> {{ session_run.start_time }}</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Question Accuracy Display</div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Question</th>
+                                <th>% Correct</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for question in question_response_percentages %}
+                                <tr>
+                                    <td>{{ question.position }}</td>
+                                    <td>{{ question.body }}</td>
+                                    <td>{{ question.percentage_correct|floatformat:'0' }}%</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Response Quantity Display </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Question</th>
+                                <th>Responses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for question in question_response_quantities %}
+                                <tr>
+                                    <td>{{ question.position }}</td>
+                                    <td>{{ question.body }}</td>
+                                    <td>{{ question.num_responses }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

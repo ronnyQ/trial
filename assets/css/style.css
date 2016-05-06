@@ -1,0 +1,68 @@
+/* Global Styles */
+#content-container {
+    margin-top: 70px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+input.input-narrow {
+    width: 60px !important;
+}
+
+/* Extensions to Bootstrap Functionality */
+.progress-value {
+    position:absolute;
+    right:0;
+    left:0;
+    text-align: center;
+}
+
+/* Global UI Stuff */
+div.spinner-large {
+    background-image: url(/static/img/spinner-large.gif);
+    width: 66px;
+    height: 66px;
+}
+
+.center-block {
+    margin: 0 auto;
+}
+
+/* Tutor - Session Running */
+#question-running {
+    display: none;
+}
+
+#question-progress-bars {
+    display: none;
+}
+
+#gathering-responses {
+    display: none;
+}
+
+#question-results {
+    display: none;
+}
+
+#running-session-statistics td,th {
+    text-align: center;
+}
+
+#running-session-statistics tbody {
+    font-size: 25px;
+}
+
+/* Student - Session Running */
+#question-container {
+    display: none;
+}
+
+#response-transmitted-container {
+    display: none;
+}
+div.logo{
+background-image: url(/static/img/udsm.jpg);
+    width: 66px;
+    height: 66px;		
+}

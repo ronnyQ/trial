@@ -1,0 +1,30 @@
+{% extends "tutor_base.html" %}
+
+{% block content %}
+    <h2>Edit Session - {{ session.title }}:</h2>
+
+    <h3>Questions:</h3>
+    {% if questions %}
+        {% for question in questions %}
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ question.question_body }}</div>
+                <div class="panel-body">
+                    <form method="POST">{% csrf_token %}
+                        <a href="/tutor/sessions/{{ session.pk }}/questions/edit/{{ question.id }}/" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <input type="hidden" name="question-id" value="{{ question.id }}">
+                        <!--{% if not forloop.first %}
+                            <button name="move-up" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-arrow-up"></span> Move Up</button>
+                        {% endif %}
+                        {% if not forloop.last %}
+                            <button name="move-down" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-arrow-down"></span> Move Down</button>
+                        {% endif %}-->
+                        <button name="delete" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info"><strong>Notice:</strong> This session does not contain any questions, yet!</div>
+    {% endif %}
+    <a href="/tutor/sessions/{{ session.pk }}/questions/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Question</a>
+{% endblock %}
